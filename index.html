@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Hairline|Bungee+Shade" rel="stylesheet">
+
+    <title>The Chaos Game</title>
+  </head>
+
+  <body>
+    <div id="content">
+      <h1>The Chaos Game</h1>
+      <div id="chaos"> 
+        <div id="canvas">
+          <canvas id="myCanvas" height="500" width="500"> Please use a browser that supports the HTML Canvas element.
+          </canvas>
+        </div>
+        <div id="controls">
+          <div id="params">
+            <h3>Parameters</h3>
+            <div>
+              <label for="vertices">Vertices:</label>
+              <input class="num" type="number" id="vertices" value="5" min="3">
+            </div>
+            <div>
+              <label for="step">Step size:</label>
+              <input class="num" type="number" id="step" value=".59" step="0.01" max="1" min="0">
+            </div>
+            <div>   
+              <label for="numIterations">Iterations:</label>
+              <input class="num" type="number" id="numIterations" value="100000">
+            </div>
+            <div>
+              <label for="repeats">No repeat vertices:</label>
+              <input type="checkbox" id="repeats">
+            </div>
+          </div>
+          <div id="options">
+            <h3> Display Options</h3>
+            <div>
+              <span>Colouring:</span>
+              <div>
+                <div class="radioOption">
+                <input type="radio" name="colour" value="black" id="black" checked>
+                <label for="black">Off</label>
+                </div>
+                <div class="radioOption">
+                <input type="radio" name="colour" value="vertex" id="vertex">
+                <label for="vertex">Vertex</label>
+                </div>
+              </div>
+            </div>
+            <div>
+              <label for="drawVerts">Draw vertices:</label>
+              <input type="checkbox" id="drawVerts">
+            </div>
+            <div>
+              <label for="drawLines">Draw polygon:</label>
+              <input type="checkbox" id="drawLines">
+            </div>
+          </div>
+          <div id="buttonDiv">
+            <button onclick="drawChaos()"><h3>Draw</h3></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/chaos.js"></script>
+  </body>
+</html>

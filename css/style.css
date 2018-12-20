@@ -1,0 +1,102 @@
+body {
+        background: #FFFFEE;
+        font-family: 'Bungee Hairline', sans-serif;
+        font-size: 12pt;
+        font-weight: bold;
+}
+
+
+h1 {
+        text-align: center;
+        font-family: 'Bungee Shade', sans-serif;
+        font-size: 32pt;
+}
+
+canvas {
+        background: #FFFFFF;
+        display: inline-block;
+        margin: 0px;
+        padding: 0px;
+}
+
+div#content {
+        text-align: center;
+}
+
+div#chaos {
+        display: block;
+}
+
+div#canvas {
+        border: 1px;
+        margin: 0px 0px 0px 0px;
+        border-style: solid;
+        border-color: #EEEEDD;
+        padding: 0px 0px 0px 0px;
+        display: inline-block;
+        vertical-align: text-top;
+        height: 500px;
+}
+div#controls {
+        border: 1px;
+        padding: 0px 5px 5px  5px ;
+        border-style: solid;
+        border-color: #EEEEDD;
+        display: inline-block;
+        vertical-align: text-top;
+        text-align: right;
+}
+
+div#params {
+        border: 1px;
+        border-color: #EEEEDD;
+        border-style: none;
+        margin: 0px 0px 5px 0px;
+}
+
+div#options {
+        border: 1px;
+        border-color: #EEEEDD;
+        border-style: none;
+        margin: 5px 0px 5px 0px;
+}
+
+div#buttonDiv {
+        float: right;
+}
+
+div.radioOption {
+        text-align: right;
+        padding: 0px 0px 0px 20px;
+}
+
+input {
+        margin: 3px 0px 3px 0px;
+        text-align: right;
+        background: #ffffff;
+        border: none;
+}
+
+label {
+        float: left;
+}
+
+h3 {
+        font-size: 16pt;
+        padding: 0px;
+        margin: 0px;
+        text-decoration: underline;
+}
+
+button {
+        background: #eeeedd;
+        border: none;
+        font-family: 'Bungee Hairline', sans-serif;
+        text-align: center;
+        display: block;
+}
+
+span {
+        text-align: left;
+        display: block;
+}
