@@ -13,7 +13,6 @@ h1 {
 }
 
 canvas {
-        background: #FFFFFF;
         display: inline-block;
         margin: 0px;
         padding: 0px;
@@ -28,6 +27,7 @@ div#chaos {
 }
 
 div#canvas {
+        background: #FFFFFF;
         border: 1px;
         margin: 0px 0px 0px 0px;
         border-style: solid;

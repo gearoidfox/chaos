@@ -1,5 +1,5 @@
 var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext("2d");
+var context = canvas.getContext("2d");
 var centre = {x: Math.floor(canvas.width/2), y: Math.floor(canvas.height/2)};
 var scale = Math.floor(canvas.height / 2) - 2;
 if(canvas.height > canvas.width) scale = Math.floor(canvas.width / 2);
@@ -11,7 +11,7 @@ var colours = ['#a6cee3','#1f78b4','#b2df8a','#33a02c','#fb9a99','#e31a1c','#fdb
 drawChaos(); // draw once on load
 
 function drawChaos(){
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        context.clearRect(0, 0, canvas.width, canvas.height);
 
         /* Get all options and parameters from page: */
         step = document.getElementById("step").value;
@@ -40,25 +40,25 @@ function drawChaos(){
 
         /* Draw polygon (optional) */
         if(drawLines) {
-                ctx.strokeStyle = "#AAAAAA"
-                ctx.beginPath();
-                ctx.moveTo(vertices[0].x, vertices[0].y);
+                context.strokeStyle = "#AAAAAA"
+                context.beginPath();
+                context.moveTo(vertices[0].x, vertices[0].y);
                 for(i = 0; i < sides; i++) {
-                        ctx.lineTo(vertices[i].x, vertices[i].y);
+                        context.lineTo(vertices[i].x, vertices[i].y);
                 }
-                ctx.lineTo(vertices[0].x, vertices[0].y);
-                ctx.stroke();
-                ctx.closePath();
+                context.lineTo(vertices[0].x, vertices[0].y);
+                context.stroke();
+                context.closePath();
         }
 
         /* Draw vertices (optional) */
         if(drawVerts) {
                 for(i = 0; i < sides; i++) {
                         if(colourScheme == "vertex") {
-                                ctx.fillStyle=colours[i % colours.length];
+                                context.fillStyle=colours[i % colours.length];
                         }
-                        else ctx.fillStyle="#000000";
-                        ctx.fillRect(vertices[i].x - 2, vertices[i].y - 2, 4, 4);
+                        else context.fillStyle="#000000";
+                        context.fillRect(vertices[i].x - 2, vertices[i].y - 2, 4, 4);
                 }
         }
 
@@ -97,14 +97,14 @@ function drawChaos(){
                 }
                 currentVertex = vert;
                 if (colourScheme == "vertex") {
-                        ctx.fillStyle = colours[vert % colours.length];
+                        context.fillStyle = colours[vert % colours.length];
                 } else {
-                        ctx.fillStyle = "#000000";
+                        context.fillStyle = "#000000";
                 }
                 vx = vertices[vert].x;
                 vy = vertices[vert].y;
                 x = x + step * (vx - x);
                 y = y + step * (vy - y);
-                ctx.fillRect(x, y, 1, 1);
+                context.fillRect(x, y, 1, 1);
         }
 }
