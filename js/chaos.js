@@ -33,8 +33,8 @@ function drawChaos(){
         angle =  2 * Math.PI / sides;
         vertices = [];
         for(i = 1; i <= sides; i++) {
-                let x = centre.x + Math.sin(i*angle) * scale;
-                let y = centre.y + Math.cos(i*angle) * scale;
+                x = centre.x + Math.sin(i*angle) * scale;
+                y = centre.y + Math.cos(i*angle) * scale;
                 vertices.push({x: x, y: y});
         }
 
