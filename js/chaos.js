@@ -1,3 +1,4 @@
+"use strict";
 var canvas = document.getElementById("myCanvas");
 var context = canvas.getContext("2d");
 var centre = {x: Math.floor(canvas.width/2), y: Math.floor(canvas.height/2)};
@@ -14,15 +15,15 @@ function drawChaos(){
         context.clearRect(0, 0, canvas.width, canvas.height);
 
         /* Get all options and parameters from page: */
-        step = document.getElementById("step").value;
-        numIterations = document.getElementById("numIterations").value;
-        sides = document.getElementById("vertices").value;
-        drawVerts = document.getElementById("drawVerts").checked;
-        drawLines = document.getElementById("drawLines").checked;
-        noRepeats = document.getElementById("repeats").checked;
-        schemes = document.getElementsByName("colour");
-        colourScheme = "black";
-        for(i = 0; i < schemes.length; i++) {
+        let step = document.getElementById("step").value;
+        let numIterations = document.getElementById("numIterations").value;
+        let sides = document.getElementById("vertices").value;
+        let drawVerts = document.getElementById("drawVerts").checked;
+        let drawLines = document.getElementById("drawLines").checked;
+        let noRepeats = document.getElementById("repeats").checked;
+        let schemes = document.getElementsByName("colour");
+        let colourScheme = "black";
+        for(let i = 0; i < schemes.length; i++) {
                 if(schemes[i].checked) {
                         colourScheme = schemes[i].value;
                 }
@@ -30,9 +31,9 @@ function drawChaos(){
 
 
         /* Calculate vertices of polygon */
-        angle =  2 * Math.PI / sides;
-        vertices = [];
-        for(i = 1; i <= sides; i++) {
+        let angle =  2 * Math.PI / sides;
+        let vertices = [];
+        for(var i = 1; i <= sides; i++) {
                 x = centre.x + Math.sin(i*angle) * scale;
                 y = centre.y + Math.cos(i*angle) * scale;
                 vertices.push({x: x, y: y});
@@ -69,9 +70,9 @@ function drawChaos(){
         /* Throw away the first few points without plotting: */
         for(i = 0; i < 10; i++)
         {
-                vert = Math.floor(Math.random() * sides);
-                vx = vertices[vert].x;
-                vy = vertices[vert].y;
+                let vert = Math.floor(Math.random() * sides);
+                let vx = vertices[vert].x;
+                let vy = vertices[vert].y;
                 x = x + step * (vx - x);
                 y = y + step * (vy - y);
         }
@@ -86,10 +87,10 @@ function drawChaos(){
          * If colourScheme=="vertex", assign each vertex a colour, and colour
          * points according to the vertex we're moving towards.
          */
-        currentVertex = 0
+        let currentVertex = 0
         for(i = 0; i < numIterations; i++)
         {
-                vert = Math.floor(Math.random() * sides);
+                let vert = Math.floor(Math.random() * sides);
                 if(noRepeats) {
                         while(vert == currentVertex) {
                                 vert = Math.floor(Math.random() * sides);
@@ -101,8 +102,8 @@ function drawChaos(){
                 } else {
                         context.fillStyle = "#000000";
                 }
-                vx = vertices[vert].x;
-                vy = vertices[vert].y;
+                let vx = vertices[vert].x;
+                let vy = vertices[vert].y;
                 x = x + step * (vx - x);
                 y = y + step * (vy - y);
                 context.fillRect(x, y, 1, 1);
